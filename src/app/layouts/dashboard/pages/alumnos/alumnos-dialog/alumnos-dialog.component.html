@@ -1,0 +1,90 @@
+<h2  class="titulo" mat-dialog-title>Agregar Alumno</h2>
+    <div mat-dialog-content> 
+        <form [formGroup]="alumnosForm">
+            
+            <div class="row">
+                
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>nombre</mat-label>
+                        <input formControlName="nombre" matInput>
+                        <!-- <mat-error>{{nombreControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input formControlName="apellido" matInput>
+                        <!-- <mat-error>{{apellidoControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>DNI</mat-label>
+                        <input formControlName="dni" matInput>
+                        <!-- <mat-error>{{dniContro?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput>
+                        <!-- <mat-error>{{emailControl?.errors|validacione}}l</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Carrera</mat-label>
+                        <mat-select formControlName="carrera">
+                            <mat-option value="FrontEnd">Front End</mat-option>
+                            <mat-option value="BackEnd">Back End</mat-option>
+                            <mat-option value="Desarrollo UX/UI">Desarrollo UX/UI</mat-option>
+                        </mat-select>
+                        <!-- <mat-error>{{materiControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Materia</mat-label>
+                        <mat-select formControlName="materia">
+                            <mat-option value="Desarrollo Web">Desarrolo Web</mat-option>
+                            <mat-option value="JavaScript">JavaScript</mat-option>
+                            <mat-option value="Angular">Angular</mat-option>
+                            <mat-option value="React">React</mat-option>
+                            <mat-option value="Diseño UX/UI">Diseño UX/UI
+                            </mat-option>
+                            <mat-option value="Diseño UX/UI avanzado">Diseño UX/UI Avanzado
+                            </mat-option>
+                           <mat-option value="Photoshop">Photoshop e Ilustrator</mat-option>
+                        </mat-select>
+                        <!-- <mat-error>{{materiControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Nota</mat-label>
+                        <input formControlName="nota" matInput>
+                      <!--   <mat-error>{{notaControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4" appColorLetra color="red">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Estado</mat-label>
+                        <mat-select formControlName="estado">
+                            <mat-option value="Aprobado">Aprobado</mat-option>
+                            <mat-option value="Recupera">Recupera</mat-option>
+                            <mat-option value="Recursa">Recursa</mat-option>
+                            
+                        </mat-select>
+                      <!--  <mat-error>{{estadoControl?.errors|validacione}}</mat-error> -->
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+        <!--{{userForm.value | json}}-->
+    </div>
+    
+    <div class="d-flex justify-content-end" mat-dialog-actions>
+        <button (click)="agregar()" mat-button>Agregar</button>
+        <button mat-dialog-close="" mat-button>cancelar</button>
+    </div>

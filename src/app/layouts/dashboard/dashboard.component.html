@@ -1,0 +1,118 @@
+
+<mat-drawer-container class="example-container" autosize>
+
+  
+  <!--SIDEBAR-->
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>CODERHOUSE</p>
+    <div>
+      <button  (click)="logIn()" class="iniSesion" mat-raised-button>
+        Iniciar Sesion
+      </button>
+    </div>
+    <div>
+      <button routerLink="carreras" mat-raised-button>
+        Carreras
+      </button>
+    </div>
+    <div>
+      <button routerLink="materias"  mat-raised-button>
+        Materias
+      </button>
+    </div>
+    <div>
+      <button routerLink="alumnos" mat-raised-button>
+        Alumnos
+      </button>
+    </div>
+    <div>
+      <button (click)="logOut()" class="cerrarSesion" mat-raised-button>
+        Cerrar Sesion
+      </button>
+    </div>
+  </mat-drawer>
+  
+  
+  <!--CONTENIDO A LA DERECHA-->
+  <div class="example-sidenav-content">
+    <!--TOOLBAR SUPERIORx-->
+    <mat-toolbar>
+      <button
+      (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span><img class="logo" src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="logo coderhouse"></span>
+    
+    <div class="d-flex justify-content-end aling-item center w-100">
+      @if(authUser$|async;as user){<div>{{user?.email}}</div>}
+    </div>
+  </mat-toolbar>
+  
+  <main style="padding: 1rem;">
+    <!-- 
+
+      
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Carreras</mat-card-title>
+        </mat-card-header>                
+        <img 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sMbTr4k3JOLP7rchhwixVejQztiMxRSTUTs-ih8103rDDYptFFPj2srI6wtylZR_p1s&usqp=CAU alt=">
+        
+        <mat-card-content>
+          <p>
+            Carga, modificacion y eliminacion de Carreras
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button routerLink="carreras" mat-flat-button color="warn">INGRESAR</button>
+            </mat-card-actions>
+          </mat-card>
+          
+          <mat-card>
+            <mat-card-header>
+            <mat-card-title>Materias</mat-card-title>
+          </mat-card-header>
+          <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw8Gzt2MD4HBeft_UyDz75LZJ8dm-KyQJuoxtca8U3YA&s">
+          
+          <mat-card-content>
+              <p>
+                  Carga, modificacion y eliminacion de Materias
+              </p>
+          </mat-card-content>
+          <mat-card-actions>
+              <button mat-flat-button color="warn">INGRESAR</button>
+          </mat-card-actions>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          
+          <mat-card-title>Alumnos</mat-card-title>
+
+          </mat-card-header>
+          
+              <img src="https://cdn-icons-png.flaticon.com/512/9972/9972270.png">
+        
+          <mat-card-content>
+              <p>
+                Carga, modificacion y eliminacion de Alumnos
+              </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-flat-button color="warn">INGRESAR</button>
+              
+          </mat-card-actions>
+        </mat-card>
+      </main>
+      <main>
+    -->
+      <router-outlet/>
+    </main>
+</div>  
+
+  
+  
+
+</mat-drawer-container>

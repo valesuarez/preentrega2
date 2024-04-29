@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    padding-left: 100px;
+
+    mat-card {
+        background-color: black;
+        color: white;
+
+        margin: 15px;
+
+        mat-card-header {
+            mat-card-title {
+                font-weight: bold;
+                font-size: 30px;
+                padding-left: 110px;
+            }
+        }
+        img {
+            height: 250px;
+            width: 300px;
+        }
+    }
+}
