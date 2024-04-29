@@ -17,7 +17,7 @@ export class CarrerasDialogComponent {
       this.carrerasForm = this.formBuilder.group({
         carrera:['',[Validators.required]],
         cantidaddematerias:['',[Validators.required,Validators.pattern(/^([0-9])*$/)]],
-        materias:['',[Validators.required]]
+        titulo:['',[Validators.required]]
 
       })
       if(editarCarreras){
@@ -31,7 +31,7 @@ export class CarrerasDialogComponent {
     return this.carrerasForm.get('cantidaddematerias');
   }
   get materiasControl(){
-    return this.carrerasForm.get('materias');
+    return this.carrerasForm.get('titulo');
   }
 
   agregar():void{

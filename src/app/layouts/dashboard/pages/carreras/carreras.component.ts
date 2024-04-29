@@ -35,9 +35,12 @@ openDialog(editarCarreras?:Icarreras):void{
     {
       next:(result)=>{
         if(result){
+          if(editarCarreras){
+            this.carreras=this.carreras.map ((a)=>a.carrera === editarCarreras.carrera?{...a,...result}:a)
+          }else{
           this.carreras = [...this.carreras, result]
         }
-      },
+      }}
     }
   )
 }

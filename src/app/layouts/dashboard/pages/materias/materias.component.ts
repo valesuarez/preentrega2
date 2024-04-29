@@ -32,9 +32,12 @@ openDialog(editarMaterias?:Imaterias):void{
     {
       next:(result)=>{
         if(result){
+          if(editarMaterias){
+            this.materias = this.materias.map((m)=>m.materia ===editarMaterias.materia? {...m,...result}:m)
+          }else{
           this.materias = [...this.materias, result]
         }
-      },
+      }}
     }
   )
 }

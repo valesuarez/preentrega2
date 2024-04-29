@@ -6,7 +6,7 @@
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <p>CODERHOUSE</p>
     <div>
-      <button  (click)="logIn()" class="iniSesion" mat-raised-button>
+      <button  routerLink="auth" class="iniSesion" mat-raised-button>
         Iniciar Sesion
       </button>
     </div>
@@ -44,7 +44,7 @@
     <span><img class="logo" src="https://jobs.coderhouse.com/assets/logos_coderhouse.png" alt="logo coderhouse"></span>
     
     <div class="d-flex justify-content-end aling-item center w-100">
-      @if(authUser$|async;as user){<div>{{user?.email}}</div>}
+     <div *ngIf="authUsuarioSinPipe">{{authUsuarioSinPipe?.email}}</div>
     </div>
   </mat-toolbar>
   

@@ -16,7 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { NombreyapellidoPipe } from './pipes/nombreyapellido.pipe';
 import { TamanoDirective } from '../dashboard/pages/directivas/tamaño.directive';
 import { ValidacionesPipe } from './pipes/validaciones.pipe';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -47,7 +47,8 @@ import { ValidacionesPipe } from './pipes/validaciones.pipe';
     MatTableModule,
     NombreyapellidoPipe,
     TamanoDirective,
-    ValidacionesPipe
+    ValidacionesPipe,
+    MatProgressSpinnerModule
   ]
 })
 export class SharedModule { }

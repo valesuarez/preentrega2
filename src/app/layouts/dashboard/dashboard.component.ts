@@ -1,40 +1,47 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { AuthServise } from '../../core/auth.service';
-import { IUSer } from './pages/models/index';
-import { Observable } from 'rxjs';
+import { AuthService } from '../../core/auth.service';
+import {  Iusuario } from './pages/models/index';
+import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl:   './dashboard.component.html',
+  templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
   showFiller = false;
+  mostrarComponent =true;
   
-  authUser$: Observable<IUSer|null>;
-  constructor(private authService: AuthServise,
+  authUsuario$: Observable<Iusuario|null>;
+  authUsuarioSinPipe:Iusuario |null =null;
+  authUsuarioSubscription?:Subscription;
+
+  constructor(private authService: AuthService,
     private router: Router 
   ){ 
-    this.authUser$=this.authService.authUser$;
-  };
-    logIn():void{
-      this.authService.logIn();
-    };
+    this.authUsuario$=this.authService.authUsuario$;
+  }
+  ngOnDestroy():void{
+    this.authUsuarioSubscription?.unsubscribe();
+  }
+  ngOnInit():void{
+    this.authUsuarioSubscription =this.authService.authUsuario$.subscribe({
+      next:(usuario) => {
+        this.authUsuarioSinPipe = usuario;
+      },
+    });
+  }
+    
     logOut():void{
       this.authService.logOut();
       this.router.navigate(['dashboard'])
     };
    
 
-  /*constructor(private matDialog:MatDialog) {}
-  inicioSesion():void{
-    this.matDialog.open(InicioDialogComponent)
-  
-  }*/
   
 }
  

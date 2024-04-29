@@ -29,11 +29,18 @@ export interface Ialumnos{
 export interface Icarreras{
     carrera:string;
     cantidaddematerias:number;
-    titulo:Materias
+    titulo:string
 }
 
 export interface Imaterias{
     materia:string;
     diasyhorarios:string;
     profesor:string
+}
+
+export type Rol = 'Admin'|'Profesor'
+export interface Iusuario{
+    email:string;
+    caontraseña:number;
+    rol:Rol
 }

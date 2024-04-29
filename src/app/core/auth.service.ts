@@ -1,20 +1,23 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
-import { IUSer } from "../layouts/dashboard/pages/models";
+import { Iusuario } from "../layouts/dashboard/pages/models";
 
-@Injectable({providedIn: 'root'})
-export class AuthServise{
-    [x: string]: any;
-    authUser$= new BehaviorSubject<IUSer|null>(null)
-    
-    logIn():void{
-        this.authUser$.next({
-            email:'v@gmail.com',
-            rol:'admin',
+@Injectable({ providedIn: 'root' })
+export class AuthService {
+    private _authUsuario$ = new BehaviorSubject<Iusuario | null>(null);
+    public authUsuario$ = this._authUsuario$.asObservable()
+
+    logIn(): void {
+        this._authUsuario$.next({
+            email: 'email@gmail.com',
+            caontraseña: 1234,
+            rol: 'Profesor'
         })
+        };
 
+        logOut(): void {
+            this._authUsuario$.next(null);
+        }
     }
-    logOut(): void{
-        this.authUser$.next(null)
-    }
-}
+
+
