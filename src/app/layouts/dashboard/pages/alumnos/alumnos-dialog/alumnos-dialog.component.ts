@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import { Ialumnos } from '../../models';
+import { soloGmailValidator } from '../../utils/validators';
 
 @Component({
   selector: 'app-alumnos-dialog',
@@ -22,7 +23,7 @@ export class AlumnosDialogComponent {
       apellido:['',[Validators.required,Validators.pattern('^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+$') ]],
       dni:['',[Validators.required, Validators.pattern(/^([0-9])*$/),Validators.maxLength(8),Validators.minLength(8)
     ]],
-      email:['',[Validators.required ,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}')]],
+      email:['',[Validators.required,soloGmailValidator ,Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}')]],
       carrera:['',[Validators.required]],
       materia:['',[Validators.required ]],
       nota:['',[Validators.required, Validators.pattern(/^([0-9])*$/),Validators.max(10),Validators.min(1)

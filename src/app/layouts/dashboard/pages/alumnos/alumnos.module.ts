@@ -8,10 +8,12 @@ import { SharedModule } from '../../../shared/shared.module';
 import { AlumnosDialogComponent } from './alumnos-dialog/alumnos-dialog.component';
 
 
+
 @NgModule({
   declarations: [
     AlumnosComponent,
-    AlumnosDialogComponent
+    AlumnosDialogComponent,
+    
   ],
   imports: [
     CommonModule,

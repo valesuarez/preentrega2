@@ -9,11 +9,6 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children:[
-      {
-        path: 'menu',
-        loadChildren: () => 
-          import('./pages/menu/menu.module').then((m) => m.MenuModule),
-      },
       
       {
         path:'carreras',

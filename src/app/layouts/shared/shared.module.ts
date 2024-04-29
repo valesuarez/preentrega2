@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { RouterModule } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { NombreyapellidoPipe } from './pipes/nombreyapellido.pipe';
+import { TamanoDirective } from '../dashboard/pages/directivas/tamaño.directive';
+import { ValidacionesPipe } from './pipes/validaciones.pipe';
 
 
 
@@ -22,7 +24,9 @@ import { NombreyapellidoPipe } from './pipes/nombreyapellido.pipe';
 
 @NgModule({
   declarations: [
-   NombreyapellidoPipe
+   NombreyapellidoPipe,
+   TamanoDirective,
+   ValidacionesPipe
   ],
   imports: [
     CommonModule
@@ -41,7 +45,9 @@ import { NombreyapellidoPipe } from './pipes/nombreyapellido.pipe';
     MatSelectModule,
     RouterModule,
     MatTableModule,
-    NombreyapellidoPipe
+    NombreyapellidoPipe,
+    TamanoDirective,
+    ValidacionesPipe
   ]
 })
 export class SharedModule { }

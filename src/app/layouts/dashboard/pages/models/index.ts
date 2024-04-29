@@ -31,3 +31,9 @@ export interface Icarreras{
     cantidaddematerias:number;
     titulo:Materias
 }
+
+export interface Imaterias{
+    materia:string;
+    diasyhorarios:string;
+    profesor:string
+}

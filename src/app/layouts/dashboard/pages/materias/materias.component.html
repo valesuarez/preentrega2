@@ -1,1 +1,43 @@
-<p>materias works!</p>
+<div class="d-flex justify-content-end">
+    <button (click)="openDialog()" mat-flat-button>Agregar Materia</button>
+  </div>
+  
+  <table mat-table [dataSource]="materias" class="mat-elevation-z8">
+  
+    <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+  
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="materia">
+      <th  appTamano mat-header-cell *matHeaderCellDef> Materia </th>
+      <td mat-cell *matCellDef="let element"> {{element.materia}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="diasyhorarios">
+      <th  appTamano mat-header-cell *matHeaderCellDef> Dias y Horario </th>
+      <td mat-cell *matCellDef="let element"> {{element.diasyhorarios}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="profesor">
+      <th  appTamano mat-header-cell *matHeaderCellDef> Profesor </th>
+      <td mat-cell *matCellDef="let element"> {{element.profesor}} </td>
+    </ng-container>
+  
+    
+  
+    <ng-container matColumnDef="opciones">
+      <th  appTamano mat-header-cell *matHeaderCellDef> Opciones </th>
+      <td mat-cell *matCellDef="let element">
+        <button (click)="openDialog(element)"
+         mat-icon-button color="accent" ><mat-icon>edit</mat-icon></button>
+        <button (click)="eliminar(element.materia)"  mat-icon-button color="warn"><mat-icon>cancel</mat-icon></button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

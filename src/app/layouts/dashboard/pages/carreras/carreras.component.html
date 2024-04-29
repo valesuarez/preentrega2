@@ -12,30 +12,30 @@
   
     <!-- Name Column -->0
     <ng-container matColumnDef="carrera">
-      <th mat-header-cell *matHeaderCellDef> Carrera </th>
+      <th  appTamano mat-header-cell *matHeaderCellDef> Carrera </th>
       <td mat-cell *matCellDef="let element"> {{element.carrera}} </td>
     </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="cantidaddematerias">
-      <th mat-header-cell *matHeaderCellDef> Cantidad de Materias </th>
+      <th  appTamano mat-header-cell *matHeaderCellDef> Cantidad de Materias </th>
       <td mat-cell *matCellDef="let element"> {{element.cantidaddematerias}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
     <ng-container matColumnDef="titulo">
-      <th mat-header-cell *matHeaderCellDef> Titulo </th>
+      <th  appTamano mat-header-cell *matHeaderCellDef> Titulo </th>
       <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
     </ng-container>
   
     
   
     <ng-container matColumnDef="opciones">
-      <th mat-header-cell *matHeaderCellDef> Opciones </th>
+      <th  appTamano mat-header-cell *matHeaderCellDef> Opciones </th>
       <td mat-cell *matCellDef="let element">
         <button (click)="openDialog(element)"
          mat-icon-button color="accent" ><mat-icon>edit</mat-icon></button>
-        <button (click)="eliminar(element.nombre)"  mat-icon-button color="warn"><mat-icon>cancel</mat-icon></button>
+        <button (click)="eliminar(element.carrera)"  mat-icon-button color="warn"><mat-icon>cancel</mat-icon></button>
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

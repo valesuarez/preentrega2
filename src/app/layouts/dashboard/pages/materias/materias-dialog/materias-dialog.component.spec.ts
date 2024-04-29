@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MenuComponent } from './menu.component';
+import { MateriasDialogComponent } from './materias-dialog.component';
 
-describe('MenuComponent', () => {
-  let component: MenuComponent;
-  let fixture: ComponentFixture<MenuComponent>;
+describe('MateriasDialogComponent', () => {
+  let component: MateriasDialogComponent;
+  let fixture: ComponentFixture<MateriasDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MenuComponent]
+      declarations: [MateriasDialogComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(MenuComponent);
+    fixture = TestBed.createComponent(MateriasDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
