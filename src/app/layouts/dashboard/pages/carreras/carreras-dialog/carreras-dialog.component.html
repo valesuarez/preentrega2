@@ -1,0 +1,34 @@
+<h2  class="titulo" mat-dialog-title>Agregar Alumno</h2>
+    <div mat-dialog-content> 
+        <form [formGroup]="carrerasForm">
+            <div class="row">
+                
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Carrera</mat-label>
+                        <input formControlName="carrera" matInput>
+                        <!-- <mat-error>{{nombreControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Cantidad de Materias</mat-label>
+                        <input formControlName="cantidaddematerias" matInput>
+                        <!-- <mat-error>{{apellidoControl?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field class="w-100" appearance="outline">
+                        <mat-label>Titulo</mat-label>
+                        <input formControlName="titulo" matInput>
+                        <!-- <mat-error>{{dniContro?.errors|validacione}}</mat-error>-->
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+      
+    <div class="d-flex justify-content-end" mat-dialog-actions>
+        <button (click)="agregar()" mat-button>Agregar</button>
+        <button mat-dialog-close="" mat-button>cancelar</button>
+    </div>

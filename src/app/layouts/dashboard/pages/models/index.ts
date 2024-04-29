@@ -25,3 +25,9 @@ export interface Ialumnos{
     estado:Estado;
     
 }
+
+export interface Icarreras{
+    carrera:string;
+    cantidaddematerias:number;
+    titulo:Materias
+}
