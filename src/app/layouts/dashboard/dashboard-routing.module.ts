@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children:[
-      
+            
       {
         path:'carreras',
         loadChildren:() =>import('./pages/carreras/carreras.module').then((m)=>m.CarrerasModule)
@@ -22,7 +22,8 @@ const routes: Routes = [
       {
         path:'alumnos',
         loadChildren:()=>import('./pages/alumnos/alumnos.module').then((m)=>m.AlumnosModule)
-      }
+      },
+    
     ]
   } ,
 

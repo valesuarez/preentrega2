@@ -6,6 +6,7 @@ import { AlumnosComponent } from './alumnos.component';
 import { SharedModule } from '../../../shared/shared.module';
 
 import { AlumnosDialogComponent } from './alumnos-dialog/alumnos-dialog.component';
+import { DetallesdeAlumnosComponent } from './pages/detallesde-alumnos/detallesde-alumnos.component';
 
 
 
@@ -13,6 +14,7 @@ import { AlumnosDialogComponent } from './alumnos-dialog/alumnos-dialog.componen
   declarations: [
     AlumnosComponent,
     AlumnosDialogComponent,
+    DetallesdeAlumnosComponent,
     
   ],
   imports: [

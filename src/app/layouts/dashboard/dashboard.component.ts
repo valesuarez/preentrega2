@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AuthServise } from '../../core/auth.service';
 import { IUSer } from './pages/models/index';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,9 @@ export class DashboardComponent {
   showFiller = false;
   
   authUser$: Observable<IUSer|null>;
-  constructor(private authService: AuthServise){ 
+  constructor(private authService: AuthServise,
+    private router: Router 
+  ){ 
     this.authUser$=this.authService.authUser$;
   };
     logIn():void{
@@ -23,6 +26,7 @@ export class DashboardComponent {
     };
     logOut():void{
       this.authService.logOut();
+      this.router.navigate(['dashboard'])
     };
    
 
