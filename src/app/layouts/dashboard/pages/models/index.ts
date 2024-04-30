@@ -1,6 +1,8 @@
+import { FormControl } from "@angular/forms";
+
 export type IRol ='admin'|'profesor'
 
-export interface IUSer
+export interface IUsuario
 
     {
         email:string,
@@ -43,4 +45,16 @@ export interface Iusuario{
     email:string;
     caontraseña:number;
     rol:Rol
+}
+export interface Iinscripciones{
+    alumno:Ialumnos;
+    carreras:Icarreras
+}
+export interface IinscripcionesForm{
+    alumno:FormControl<Ialumnos|null>;
+    carreras:FormControl<Icarreras|null>
+}
+export interface IcreateInscripcionesDate{
+    carrera?:Icarreras|null;
+    alumno?:Ialumnos|null
 }
